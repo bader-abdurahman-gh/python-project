@@ -97,7 +97,7 @@ python-project/
 ├── data/
 │   ├── sample.yaml
 │   └── table.csv
-├── docs/
+├── documents/
 │   └── text.md
 └── README.md
 ```

@@ -194,7 +194,8 @@ def clear_logs(log_file: Path | str = dflt_log_file) -> None:
 def filter_logs(
         keyword: str,
         log_file: Path | str = dflt_log_file,
-        filter_by: str = "message"
+        filter_by: str = "message",
+        advanced: bool = False
 ) -> Logs:
     """
     Filter logs by keyword in a selected field.
@@ -207,6 +208,10 @@ def filter_logs(
         Source log file.
     filter_by : str
         Field to search within.
+    advanced : bool
+        If True, converts:
+        - date/time → datetime objects
+        - filename → Path
 
     Returns
     -------
@@ -221,7 +226,7 @@ def filter_logs(
     if not isinstance(log_file, (Path, str)):
         raise TypeError("log_file must be Path or str")
 
-    logs = load_logs(Path(log_file))
+    logs = load_logs(Path(log_file), advanced)
 
     if not logs:
         return ()
@@ -237,7 +242,8 @@ def filter_logs(
 
 def tail_logs(
         n: int = 10,
-        log_file: Path | str = dflt_log_file
+        log_file: Path | str = dflt_log_file,
+        advanced: bool = False
 ) -> Logs:
     """
     Return the last N log entries.
@@ -248,6 +254,10 @@ def tail_logs(
         Number of entries to return.
     log_file : Path | str
         Source log file.
+    advanced : bool
+        If True, converts:
+        - date/time → datetime objects
+        - filename → Path
 
     Returns
     -------
@@ -263,5 +273,5 @@ def tail_logs(
     if not isinstance(log_file, (Path, str)):
         raise TypeError("log_file must be Path or str")
 
-    logs = load_logs(Path(log_file))
+    logs = load_logs(Path(log_file), advanced)
     return logs[-n:]

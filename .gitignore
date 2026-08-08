@@ -5,7 +5,11 @@ __pycache__/
 .venv/
 venv/
 
+sample/
 logs/
+src/main.ipynb
+src/geometry.py
+src/linalg.py
 
 .idea/
 *.iml

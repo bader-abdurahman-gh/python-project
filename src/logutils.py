@@ -7,7 +7,7 @@ from datetime import datetime, date as dtdate, time as dttime
 from typing import TypedDict
 
 __all__: list[str] = [
-    'setup_logging',
+    'init',
     'load_logs',
     'clear_logs',
     'filter_logs',
@@ -39,7 +39,7 @@ LOG_PATTERN = re.compile(
 )
 
 
-def setup_logging(
+def init(
         log_file: Path | str = dflt_log_file,
         mode: str = 'a'
 ) -> None:

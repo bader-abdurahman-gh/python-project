@@ -19,7 +19,7 @@ A comprehensive Python implementation of fundamental data structures and algorit
 - **Graph Traversal** — Depth-First Search (DFS) and Breadth-First Search (BFS)
 
 ### Utilities
-- **Logging Tools** — Structured logging with file and console output, log filtering, and parsing
+- **Logging Utilities** — Structured logging with file and console output, log filtering, and parsing
 
 ## Installation
 
@@ -69,18 +69,18 @@ sorted_list = merge_sort([5, 2, 8, 1, 9])
 print(sorted_list)  # Output: [1, 2, 5, 8, 9]
 ```
 
-### Using Logging Tools
+### Using Logging Utilities
 
 ```python
-from logging_tools import setup_logging, load_logs, filter_logs
+import logutils
 
 # Setup logging
-setup_logging()
+logutils.init()
 
 # Load and filter logs
-all_logs = load_logs()
-error_logs = filter_logs("ERROR", filter_by="level")
-print(f"Found {len(error_logs)} error logs")
+all_logs = logutils.load_logs()
+error_logs = logutils.filter_logs("ERROR", filter_by="level")
+print(f"Found {len(logutils.error_logs)} error logs")
 ```
 
 ## Project Structure
@@ -92,7 +92,7 @@ python-project/
 │   │   ├── __init__.py
 │   │   ├── data_structures.py
 │   │   └── algorithms.py
-│   ├── logging_tools.py
+│   ├── logutils.py
 │   └── main.py
 ├── data/
 │   ├── sample.yaml

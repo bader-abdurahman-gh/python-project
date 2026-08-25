@@ -80,7 +80,7 @@ logutils.init()
 # Load and filter logs
 all_logs = logutils.load_logs()
 error_logs = logutils.filter_logs("ERROR", filter_by="level")
-print(f"Found {len(logutils.error_logs)} error logs")
+print(f"Found {len(error_logs)} error logs")
 ```
 
 ## Project Structure

@@ -193,8 +193,8 @@ def clear_logs(log_file: Path | str = dflt_log_file) -> None:
 
 def filter_logs(
         keyword: str,
-        log_file: Path | str = dflt_log_file,
         filter_by: str = "message",
+        log_file: Path | str = dflt_log_file,
         advanced: bool = False
 ) -> Logs:
     """
@@ -204,10 +204,10 @@ def filter_logs(
     ----------
     keyword : str
         Text to search for (case-insensitive).
-    log_file : Path | str
-        Source log file.
     filter_by : str
         Field to search within.
+    log_file : Path | str
+        Source log file.
     advanced : bool
         If True, converts:
         - date/time → datetime objects
